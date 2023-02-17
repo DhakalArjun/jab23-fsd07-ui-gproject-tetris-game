@@ -1,6 +1,6 @@
 ## It a team project being developed by following developers:
 
-Chen, Siyi
-Dhakal, Arjun
-Neamtu, Gabriel
-Here we are going to develop a tetris game using HTML, CSS and JavaScript.
+1. Siyi Chen,
+2. Arjun Dhakal,
+3. Gabriel Neamtu.
+   Here we are going to develop a tetris game using HTML, CSS and JavaScript.
