@@ -375,15 +375,15 @@ h4 {
 
 @media screen and (min-width: 760px) and (orientation: landscape) {
   #game-grid {
-    width: 300px;
-    height: 600px;
+    width: 280px;
+    height: 560px;
   }
   .game-cell {
-    width: 30px;
-    height: 30px;
+    width: 28px;
+    height: 28px;
   }
   #direction-controls-wrapper {
-    width: 300px;
+    width: 280px;
   }
   .direction-button {
     width: 4rem;
@@ -391,7 +391,7 @@ h4 {
   }
   #info-grid {
     width: 104px;
-    height: 600px;
+    height: 560px;
     margin-left: 2.5rem;
   }
   .mini-grid div {
