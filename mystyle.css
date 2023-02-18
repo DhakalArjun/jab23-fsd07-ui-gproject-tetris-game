@@ -1,0 +1,403 @@
+/************************************************ 
+* Developed by: Siyi Chen, Arjun Dhakal, Gabriel Neamtu
+* Date: 2023-02-17
+*************************************************/
+/* ==================================================================== Variables  */
+:root {
+  /* -------------------------------------------- font and background colors */
+  --col-dark: #222831;
+  --col-light: #c9d6df;
+  --col-warning: #f0a04b;
+  --col-danger: #eb455f;
+  --col-go: #2cac0c;
+  --col-sky: rgba(0, 255, 255, 0.891);
+  --col-sky-medium: rgba(0, 255, 255, 0.679);
+  --col-sky-light: rgba(0, 255, 255, 0.423);
+  /* -------------------------------------------- font familys */
+  --font1: "Montserrat", sans-serif;
+  --font2: "Roboto", sans-serif;
+}
+/* ======================================================== General/ Global Attributes */
+body {
+  margin: 0;
+  padding: 0;
+}
+/* ========================================================typography */
+body {
+  font-family: var(--font1);
+  line-height: 1.5;
+  color: var(--col-light);
+}
+h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+h3 {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+h4 {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+/* ========================================================cover-page */
+#main-container {
+  height: 100vh;
+  text-align: center;
+  background-image: url(Images/bg.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+#main-wrapper {
+  width: min(600px, 98%);
+  height: 100vh;
+  margin: auto auto;
+  background-color: var(--col-sky-light);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#main-wrapper h1 {
+  color: var(--col-danger);
+  font-size: 900;
+  letter-spacing: 1.5rem;
+  background-color: var(--col-sky);
+}
+
+#main-wrapper h3,
+#main-wrapper p {
+  margin: 1rem 0 0;
+}
+
+#main-wrapper img {
+  width: 100%;
+}
+
+#buttons-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.cover-btn {
+  width: 5rem;
+  color: var(--col-light);
+  font-weight: 600;
+  padding: 0.6rem 1.5rem;
+  text-decoration: none;
+  font-size: 1.1rem;
+  border-radius: 0.5rem;
+  border: 1px var(--col-light) solid;
+}
+.btn:hover {
+  color: var(--col-light);
+  filter: brightness(150%);
+}
+
+.btn-go {
+  background-color: var(--col-go);
+  font-family: var(--font1);
+}
+.btn-exit {
+  background-color: var(--col-danger);
+  font-family: var(--font1);
+}
+
+/* ======================================================== game-page */
+/* upper section for game grid, mini grid and info secton*/
+.game-main-wrapper {
+  color: var(--col-dark);
+}
+
+#grid-section {
+  display: flex;
+  margin: 0 auto;
+  width: fit-content;
+}
+#info-grid h4 {
+  margin: 0;
+  padding: 0;
+  font-size: small;
+}
+#info-grid p {
+  margin: 0;
+  padding: 0;
+  font-size: small;
+  font-weight: 600;
+  color: var(--col-dark);
+}
+.mt1 {
+  margin-top: 0.5rem;
+}
+/* -------- game grid */
+
+#game-grid {
+  margin: 0.5rem 0.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: var(--col-sky-medium);
+  caret-color: transparent;
+}
+
+/* -------- mini grid, info grid */
+#info-grid {
+  margin: 0.5rem 0.25rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.mini-grid {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: var(--col-sky-medium);
+  border-radius: 10%;
+}
+
+/* -------- info section */
+.info-sub {
+  background-color: var(--col-sky-medium);
+  border-radius: 5%;
+}
+
+/* -------- control section */
+#control-section {
+  display: flex;
+  margin: 0 auto 0.5rem;
+  width: fit-content;
+  border-radius: 1%;
+}
+
+#direction-controls-wrapper {
+  margin: 0.25rem;
+  text-align: center;
+  background-color: var(--col-sky-medium);
+}
+.direction-button {
+  font-family: var(--font1);
+  color: var(--col-dark);
+  padding: 0;
+  margin: 0.2rem;
+  background-color: #deb00c;
+  border: 1px var(--col-light) solid;
+  border-radius: 10%;
+  text-align: center;
+}
+.direction-button:hover {
+  filter: brightness(120%);
+}
+#right-button {
+  margin-left: 3rem;
+}
+
+#other-control-wrapper {
+  margin: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.other-button {
+  font-family: var(--font1);
+  color: var(--col-dark);
+  margin: 0.2rem auto;
+  border-radius: 5%;
+  width: 100%;
+  border: 1px var(--col-light) solid;
+}
+
+.btn-back {
+  background-color: var(--col-sky-medium);
+}
+
+.next-heading {
+  color: var(--col-light);
+  font-weight: 600;
+}
+
+@media screen and (min-width: 280px) {
+  #game-grid {
+    width: 200px;
+    height: 400px;
+  }
+  .game-cell {
+    width: 20px;
+    height: 20px;
+  }
+  #direction-controls-wrapper {
+    width: 200px;
+  }
+  .direction-button {
+    width: 3rem;
+    height: 2rem;
+  }
+
+  #info-grid {
+    width: 60px;
+    height: 400px;
+  }
+  .mini-grid div {
+    height: 15px;
+    width: 15px;
+  }
+
+  #other-control-wrapper {
+    width: 60px;
+  }
+
+  .other-button {
+    height: 2.2rem;
+  }
+}
+@media screen and (min-width: 320px) {
+  #info-grid {
+    width: 72px;
+    height: 400px;
+  }
+  .mini-grid div {
+    height: 18px;
+    width: 18px;
+  }
+  #other-control-wrapper {
+    width: 72px;
+  }
+}
+
+@media screen and (min-width: 360px) {
+  #game-grid {
+    width: 240px;
+    height: 480px;
+  }
+  .game-cell {
+    width: 24px;
+    height: 24px;
+  }
+  #direction-controls-wrapper {
+    width: 240px;
+  }
+  .direction-button {
+    width: 3.75rem;
+    height: 2.5rem;
+  }
+  #right-button {
+    margin-left: 6rem;
+  }
+  #info-grid {
+    height: 480px;
+  }
+}
+
+@media screen and (min-width: 390px) {
+  #game-grid {
+    width: 260px;
+    height: 520px;
+  }
+  .game-cell {
+    width: 26px;
+    height: 26px;
+  }
+  #direction-controls-wrapper {
+    width: 260px;
+  }
+  .direction-button {
+    width: 4rem;
+    height: 4rem;
+  }
+  #info-grid {
+    width: 80px;
+    height: 520px;
+    margin-left: 0.5rem;
+  }
+  .mini-grid div {
+    height: 20px;
+    width: 20px;
+  }
+  #other-control-wrapper {
+    width: 80px;
+    margin-left: 0.5rem;
+  }
+}
+
+@media screen and (min-width: 540px) {
+  #game-grid {
+    width: 280px;
+    height: 560px;
+  }
+  .game-cell {
+    width: 28px;
+    height: 28px;
+  }
+  #direction-controls-wrapper {
+    width: 280px;
+  }
+  .direction-button {
+    width: 4rem;
+    height: 2.5rem;
+  }
+  #right-button {
+    margin-left: 7rem;
+  }
+  #info-grid {
+    width: 88px;
+    height: 560px;
+    margin-left: 2.5rem;
+  }
+
+  .mini-grid div {
+    height: 22px;
+    width: 22px;
+  }
+
+  #other-control-wrapper {
+    width: 88px;
+    margin-left: 2.5rem;
+  }
+  .mt1 {
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (min-width: 760px) {
+  #game-grid {
+    width: 360px;
+    height: 720px;
+  }
+  .game-cell {
+    width: 36px;
+    height: 36px;
+  }
+  #direction-controls-wrapper {
+    width: 360px;
+  }
+  .direction-button {
+    width: 4rem;
+    height: 4rem;
+  }
+  #info-grid {
+    width: 104px;
+    height: 720px;
+    margin-left: 2.5rem;
+  }
+  .mini-grid div {
+    height: 26px;
+    width: 26px;
+  }
+  #other-control-wrapper {
+    width: 104px;
+    margin-left: 2.5rem;
+  }
+  #right-button {
+    margin-left: 8rem;
+  }
+  .mt1 {
+    margin-top: 1.5rem;
+  }
+}
