@@ -80,9 +80,6 @@ body {
   flex-direction: column;
   justify-content: space-evenly;
 }
-/* .cover-main-wrapper {
-  justify-content: space-evenly;
-} */
 
 #main-wrapper h1 {
   margin: 0 auto 2rem;
@@ -102,6 +99,7 @@ body {
 
 #main-wrapper img {
   width: 100%;
+  margin-bottom: 3rem;
 }
 
 #buttons-wrapper {
@@ -193,7 +191,7 @@ body {
 /* -------- control section */
 #control-section {
   display: flex;
-  margin: 0 auto 0.5rem;
+  margin: 0 auto 3rem;
   width: fit-content;
   border-radius: 1%;
 }
@@ -333,7 +331,6 @@ body {
 @media screen and (min-width: 320px) and (orientation: portrait) {
   #info-grid {
     width: 72px;
-    height: 400px;
     margin-left: 1rem;
   }
   .mini-grid div {
