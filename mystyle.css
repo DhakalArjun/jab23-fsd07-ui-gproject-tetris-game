@@ -517,8 +517,63 @@ body {
   }
 }
 
+/* Dell inspiron 15 7000 2-in-1(1535 x 745)  - landscape*/
+/* Apple MacBook Air 2020 13": 1280 pixels width. 800 pixels height */
+@media screen and (min-height: 700px) and (min-width: 1270px) and (orientation: landscape) {
+  #main-wrapper {
+    width: min(600px, 98%);
+  }
+  #control-section {
+    margin-bottom: 1rem;
+  }
+
+  #game-grid {
+    width: 250px;
+    height: 500px;
+  }
+  .game-cell {
+    width: 25px;
+    height: 25px;
+  }
+  #direction-controls-wrapper {
+    width: 250px;
+  }
+  .direction-button {
+    width: 4rem;
+    height: 3rem;
+  }
+
+  #info-grid {
+    width: 92px;
+    height: 500px;
+    margin-left: 3rem;
+  }
+  .mini-grid div {
+    height: 23px;
+    width: 23px;
+  }
+  #info-grid h4,
+  p {
+    font-size: medium;
+  }
+
+  #other-control-wrapper {
+    width: 92px;
+    margin-left: 3rem;
+  }
+  #right-button {
+    margin-left: 5rem;
+  }
+  .mt1 {
+    margin-top: 1.5rem;
+  }
+  .other-button {
+    font-size: small;
+  }
+}
+
 /* MacBook Pro 2016 (15 Inch- 1440 x 900)  - landscape*/
-@media screen and (min-height: 900px) and (min-width: 700px) and (orientation: landscape) {
+@media screen and (min-height: 900px) and (min-width: 1280px) and (orientation: landscape) {
   #main-wrapper {
     width: min(600px, 98%);
   }
@@ -569,7 +624,7 @@ body {
 }
 
 /* Desktop-1 (1680 x 1050)  - landscape*/
-@media screen and (min-height: 1050px) and (min-width: 700px) and (orientation: landscape) {
+@media screen and (min-height: 1050px) and (min-width: 1280px) and (orientation: landscape) {
   #main-wrapper {
     width: min(700px, 98%);
   }
@@ -594,7 +649,7 @@ body {
 }
 
 /* Desktop-2 (1920 x 1080)  - landscape*/
-@media screen and (min-height: 1080px) and (min-width: 700px) and (orientation: landscape) {
+@media screen and (min-height: 1080px) and (min-width: 1280px) and (orientation: landscape) {
   #game-grid {
     width: 400px;
     height: 800px;
@@ -616,7 +671,7 @@ body {
 }
 
 /* Desktop-3 (2560 x 1440)  - landscape*/
-@media screen and (min-height: 1400px) and (min-width: 800px) and (orientation: landscape) {
+@media screen and (min-height: 1400px) and (min-width: 1280px) and (orientation: landscape) {
   #main-wrapper {
     width: min(800px, 98%);
   }
