@@ -191,7 +191,7 @@ body {
 /* -------- control section */
 #control-section {
   display: flex;
-  margin: 0 auto 3rem;
+  margin: 0 auto 5rem;
   width: fit-content;
   border-radius: 1%;
 }
@@ -346,25 +346,25 @@ body {
 /* Galaxy S8 - protrait */
 @media screen and (min-width: 360px) and (orientation: portrait) {
   #game-grid {
-    width: 220px;
-    height: 440px;
+    width: 210px;
+    height: 420px;
   }
   .game-cell {
-    width: 22px;
-    height: 22px;
+    width: 21px;
+    height: 21px;
   }
   #direction-controls-wrapper {
-    width: 220px;
+    width: 210px;
   }
   .direction-button {
     width: 3.25rem;
     height: 2.5rem;
   }
   #right-button {
-    margin-left: 6rem;
+    margin-left: 5rem;
   }
   #info-grid {
-    height: 440px;
+    height: 420px;
     margin-left: 1rem;
   }
   #other-control-wrapper {
