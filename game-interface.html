@@ -34,19 +34,19 @@
             <div id="info-wrapper">
               <div class="current-score-wrapper info-sub">
                 <h4>Score</h4>
-                <p id="score">0</p>
+                <p id="score"></p>
               </div>
               <div class="rows-wrapper info-sub mt1">
                 <h4>Rows</h4>
-                <p id="rows-count">0</p>
+                <p id="rows-count"></p>
               </div>
               <div class="level-wrapper info-sub mt1">
                 <h4>Level</h4>
-                <p id="level-count">0</p>
+                <p id="level-count"></p>
               </div>
               <div class="high-score-wrapper info-sub mt1">
                 <h4>High Score</h4>
-                <p id="high-score">0</p>
+                <p id="high-score"></p>
               </div>
             </div>
           </aside>
@@ -92,10 +92,18 @@
             >
               Back
             </button>
-            <button id="push-resume-button" class="other-button btn-exit btn">
+            <button
+              onclick="pauseResume()"
+              id="push-resume-button"
+              class="other-button btn-exit btn"
+            >
               Pause/ Resume
             </button>
-            <button id="start-button" class="other-button btn-go btn">
+            <button
+              onclick="startGame()"
+              id="start-button"
+              class="other-button btn-go btn"
+            >
               Start
             </button>
           </div>
