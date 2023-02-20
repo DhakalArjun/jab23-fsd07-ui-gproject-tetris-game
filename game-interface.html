@@ -53,12 +53,36 @@
         </section>
         <section id="control-section">
           <div id="direction-controls-wrapper">
-            <button id="rotate-button" class="direction-button">Rotate</button>
+            <button
+              onclick="rotate()"
+              id="rotate-button"
+              class="direction-button"
+            >
+              Rotate
+            </button>
             <div id="left-right-wrapper">
-              <button id="left-button" class="direction-button">Left</button>
-              <button id="right-button" class="direction-button">Right</button>
+              <button
+                onclick="moveLeft()"
+                id="left-button"
+                class="direction-button"
+              >
+                Left
+              </button>
+              <button
+                onclick="moveRight()"
+                id="right-button"
+                class="direction-button"
+              >
+                Right
+              </button>
             </div>
-            <button id="down-button" class="direction-button">Down</button>
+            <button
+              onclick="moveDown()"
+              id="down-button"
+              class="direction-button"
+            >
+              Down
+            </button>
           </div>
           <div id="other-control-wrapper">
             <button

@@ -139,7 +139,7 @@ body {
 
 #grid-section {
   display: flex;
-  margin: 0 auto;
+  margin: 0.1rem auto 0;
   width: fit-content;
 }
 #info-grid h4 {
@@ -375,15 +375,15 @@ body {
 /* iphone - 12pro portrait */
 @media screen and (min-width: 390px) and (orientation: portrait) {
   #game-grid {
-    width: 260px;
-    height: 520px;
+    width: 250px;
+    height: 500px;
   }
   .game-cell {
-    width: 26px;
-    height: 26px;
+    width: 25px;
+    height: 25px;
   }
   #direction-controls-wrapper {
-    width: 260px;
+    width: 250px;
   }
   .direction-button {
     width: 4rem;
@@ -391,7 +391,7 @@ body {
   }
   #info-grid {
     width: 80px;
-    height: 520px;
+    height: 500px;
     margin-left: 1rem;
   }
   .mini-grid div {
