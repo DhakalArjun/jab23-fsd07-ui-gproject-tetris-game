@@ -413,6 +413,8 @@ function countScore() {
     if (
       rowCells.every((index) => gameGrids[index].classList.contains("occupied"))
     ) {
+      clearInterval(timerId);
+      timerId = null;
       rowCnt++;
       rowCells.forEach((index) => {
         gameGrids[index].classList.remove("occupied");
@@ -422,6 +424,7 @@ function countScore() {
       const rowRemoved = gameGrids.splice(i, gameGridColumns);
       gameGrids = rowRemoved.concat(gameGrids);
       gameGrids.forEach((cell) => gameGridWrapper.appendChild(cell));
+      timerId = setInterval(moveDown, 500);
     }
   }
   if (rowCnt > 0) {
@@ -519,9 +522,13 @@ function gameOver() {
       gameGrids[curPosition + index].classList.contains("occupied")
     )
   ) {
-    isGameOver = 1;
-    writeGameOver();
-    clearInterval(timerId);
+    if (curPosition < 10) {
+      isGameOver = 1;
+      writeGameOver();
+      clearInterval(timerId);
+    } else {
+      freeze();
+    }
   }
 }
 
