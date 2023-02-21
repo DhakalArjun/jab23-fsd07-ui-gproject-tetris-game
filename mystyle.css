@@ -13,6 +13,29 @@
   --col-sky: rgba(0, 255, 255, 0.891);
   --col-sky-medium: rgba(0, 255, 255, 0.679);
   --col-sky-light: rgba(0, 255, 255, 0.423);
+  --grad-warning:linear-gradient(
+    to bottom right,
+    #c39eff,
+    var(--col-warning)
+  );
+  --grad-danger:linear-gradient(
+    to bottom right,
+    #c39eff,
+    var(--col-danger)
+  );
+  --grad-sky:--grad-warning:linear-gradient(
+    to bottom right,
+    #c39eff,
+    var(--col-sky)
+  );
+
+  --grad-go:--grad-warning:linear-gradient(
+    to bottom right,
+    #c39eff,
+    var(--col-go)
+  );
+
+
   /* -------------------------------------------- font familys */
   --font1: "Montserrat", sans-serif;
   --font2: "Roboto", sans-serif;
@@ -126,6 +149,7 @@ body {
   background-color: var(--col-go);
   font-family: var(--font1);
 }
+
 .btn-exit {
   background-color: var(--col-danger);
   font-family: var(--font1);
@@ -164,6 +188,16 @@ body {
   display: flex;
   flex-wrap: wrap;
   background-color: var(--col-sky-medium);
+}
+
+.tetro {
+  background-color: rgba(0, 0, 255, 0.635);
+  border-radius: 5%;
+  outline: solid 0.1px #ecf9ff;
+  box-shadow: -2px -2px 10px rgba(176, 170, 170, 0.25) inset,
+    2px 2px 10px rgba(196, 193, 193, 0.287) inset;
+  margin: 0;
+  padding: 0;
 }
 
 /* -------- mini grid, info grid */
@@ -248,6 +282,7 @@ body {
   #game-grid {
     width: 180px;
     height: 360px;
+    font-size: large;
   }
   .game-cell {
     width: 18px;
@@ -292,6 +327,9 @@ body {
   #main-wrapper {
     transform: scale(0.6);
     background-color: rgba(0, 255, 255, 0);
+  }
+  #game-grid {
+    font-size: small;
   }
 }
 
@@ -453,6 +491,7 @@ body {
   #game-grid {
     width: 350px;
     height: 700px;
+    font-size: x-large;
   }
   .game-cell {
     width: 35px;
@@ -500,6 +539,7 @@ body {
   #game-grid {
     width: 400px;
     height: 800px;
+    font-size: x-large;
   }
   .game-cell {
     width: 40px;
@@ -530,6 +570,7 @@ body {
   #game-grid {
     width: 250px;
     height: 500px;
+    font-size: x-large;
   }
   .game-cell {
     width: 25px;
@@ -581,6 +622,7 @@ body {
   #game-grid {
     width: 320px;
     height: 640px;
+    font-size: x-large;
   }
   .game-cell {
     width: 32px;
@@ -631,6 +673,7 @@ body {
   #game-grid {
     width: 380px;
     height: 760px;
+    font-size: x-large;
   }
   .game-cell {
     width: 38px;
@@ -693,4 +736,48 @@ body {
   #info-grid {
     height: 1000px;
   }
+}
+
+/* Style the direction buttons */
+.direction-button {
+  border-radius: 10%;
+  box-shadow: 0 2px 2px var(--col-light);
+  background-color: #fff;
+  background-image: var(--grad-warning);
+  color: #ffffff;
+  border: none;  
+  transition: all 0.2s ease;
+}
+
+/* Add a pressed effect when the button is clicked */
+.direction-button:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 2px rgba(238, 235, 82, 0.25);
+}
+
+/* #down-button {
+  font-size: 2rem;  
+} */
+
+.first-next,
+.second-next {
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.current-score-wrapper,
+.rows-wrapper,
+.level-wrapper,
+.high-score-wrapper {
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+#back-button,
+#push-resume-button,
+#start-button {
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.mini-grids-wrappers {
+  margin-bottom: 20%;
 }

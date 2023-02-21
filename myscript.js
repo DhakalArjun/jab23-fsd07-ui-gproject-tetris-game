@@ -52,7 +52,7 @@ const tetroColors = [
   "#183A1D",
   "#060047",
   "#537FE7",
-  "#03C988",
+  "#9A1663",
   "#F0A04B",
   "#EA8FEA",
 ];
@@ -215,14 +215,11 @@ function freeze() {
     random = firstNextRandom;
     curTetro = theTetrominoes[random][curRotation];
     drawTetro();
-
     clearAllNextTetro();
     firstNextRandom = secondNextRandom;
     drawFirstNextTetro();
     secondNextRandom = Math.floor(Math.random() * theTetrominoes.length);
     drawSecondNextTetro();
-
-    //displayShape();
     countScore();
     gameOver();
   }
@@ -269,8 +266,14 @@ function moveDown() {
     curPosition += gameGridColumns;
     drawTetro();
     freeze();
+  } else {
+    for (let i = 0; i < curTetro.length; i++) {
+      gameGrids[curPosition + curTetro[i]].classList.add("occupied");
+    }
+    gameOver();
   }
 }
+
 //move left function
 function moveLeft() {
   if (!isSelfOccupied() && !isAtLeftEdge() && !isLeftOccupied()) {
@@ -360,9 +363,11 @@ const nextTetrominoes = [
 function clearAllNextTetro() {
   for (let i = 0; i < secondNextGrids.length; i++) {
     secondNextGrids[i].style.backgroundColor = "";
+    secondNextGrids[i].classList.remove("tetro");
   }
   for (let i = 0; i < firstNextGrids.length; i++) {
     firstNextGrids[i].style.backgroundColor = "";
+    firstNextGrids[i].classList.remove("tetro");
   }
 }
 
@@ -371,6 +376,9 @@ function drawFirstNextTetro() {
     firstNextGrids[
       miniIndex + nextTetrominoes[firstNextRandom][i]
     ].style.backgroundColor = tetroColors[firstNextRandom];
+    firstNextGrids[
+      miniIndex + nextTetrominoes[firstNextRandom][i]
+    ].classList.add("tetro");
   }
 }
 
@@ -379,6 +387,9 @@ function drawSecondNextTetro() {
     secondNextGrids[
       miniIndex + nextTetrominoes[secondNextRandom][i]
     ].style.backgroundColor = tetroColors[secondNextRandom];
+    secondNextGrids[
+      miniIndex + nextTetrominoes[secondNextRandom][i]
+    ].classList.add("tetro");
   }
 }
 
@@ -479,10 +490,16 @@ function restartGame() {
       alert("Current game is not over");
     } else {
       curPosition = 4;
-      random = firstNextRandom;
+      random = Math.floor(Math.random() * theTetrominoes.length);
       curTetro = theTetrominoes[random][curRotation];
       drawTetro();
       timerId = setInterval(moveDown, 500);
+      clearAllNextTetro();
+      firstNextRandom = secondNextRandom;
+      drawFirstNextTetro();
+      secondNextRandom = Math.floor(Math.random() * theTetrominoes.length);
+      drawSecondNextTetro();
+      isGameOver = 0;
     }
   }
 }
@@ -510,9 +527,11 @@ function gameOver() {
 
 function writeGameOver() {
   for (let i = 90; i < 130; i++) {
+    gameGrids[i].classList.remove("tetro");
+    gameGrids[i].classList.remove("occupied");
     gameGrids[i].style.backgroundColor = "#eb455f";
     gameGrids[i].style.color = "white";
-    gameGrids[i].style.fontSize = "x-large";
+    //gameGrids[i].style.fontSize = "x-large";
     gameGrids[i].style.fontWeight = "600";
   }
   gameGrids[103].innerHTML = "G";
