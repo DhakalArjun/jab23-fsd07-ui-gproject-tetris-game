@@ -1,3 +1,7 @@
+/************************************************
+ * Developed by: Siyi Chen, Arjun Dhakal, Gabriel Neamtu
+ * Date: 2023-02-17
+ *************************************************/
 const gameGridWrapper = document.querySelector("#game-grid");
 //main grid of 21 rows x 10 columns grid will be generated inside game-grid
 for (let i = 0; i < 210; i++) {
